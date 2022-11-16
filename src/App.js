@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "animate.css";
+import Gallery from "./Components/Gallery/Gallery";
+import { useDispatch, useSelector } from "react-redux";
+import ErrorPopup from "./Components/Utils/ErrorPopup";
+import { updateErrors } from "./actions/auth";
 function App() {
+  const dispatch = useDispatch();
+  const auth = useSelector((data) => data.auth);
+  const handleError = () => {
+    dispatch(
+      updateErrors({
+        issue: true,
+        message: "",
+      })
+    );
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id="background">
+      <ErrorPopup open={auth.error.issue} handleClose={handleError} />
+      <Gallery />
     </div>
   );
 }

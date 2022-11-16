@@ -1,0 +1,86 @@
+.Gallery{
+    height: 100vh;
+}
+.Dashboard{
+    text-align: center;
+}
+.header{
+ max-width: 800px;
+ margin: auto;
+ margin-top: 3rem;
+}
+.headerbtn{
+    max-width: 740px;
+    display: flex;
+    justify-content: space-between;
+}
+.searchbar{
+    max-width: 750px;
+    
+    
+}
+
+.searchbar>input{
+    align-self: center;
+    height: 2.3rem;
+    max-width: 600px;
+    margin: auto;
+    min-width: 300px;
+}
+.searchbar>input{
+    background-color: "#fd0000";
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 1.2rem;
+    height: 2rem;
+}
+.searchbar>input::placeholder{
+    color:#4b0000;
+}
+.searchbar>input:focus::placeholder {
+    color: transparent;
+  }
+  .searchbar>input:focus{
+    outline-style: solid;
+    outline-color:#fd0000 ;
+}
+.btn{
+
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #e90d0d ;
+    padding: 0.5rem;
+    width: 150px;
+    color: white;
+    margin-top: 1rem;
+}
+.btn1{
+
+    margin: auto;
+    border: 2px solid #e90d0d;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: white ;
+    padding: 0.5rem;
+    width: 150px;
+    color: #e90d0d;
+    margin-top: 1rem;
+}
+.Post img{
+    height:200px
+}
+.Post {
+    background-color: rgba(255, 255, 255, 0.436);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+.Post h4{
+    color:#4b0000;
+    margin: 0;
+    font-size: 20px;
+}
