@@ -1,7 +1,11 @@
 import React, { useRef, useState } from "react";
 import classes from "../Style/Utils.module.css";
 import { useDispatch } from "react-redux";
-import { registerUser, sendLoginRequest } from "../../actions/auth";
+import {
+  registerUser,
+  sendLoginRequest,
+  setIsLoading,
+} from "../../actions/auth";
 
 function Login(props) {
   const passwordRef = useRef();
@@ -10,10 +14,7 @@ function Login(props) {
   const dispatch = useDispatch();
   const [register, setRegister] = useState(false);
   const handleSubmit = () => {
-    props.loading(true);
-    setTimeout(() => {
-      props.loading(false);
-    }, 2000);
+    dispatch(setIsLoading(true));
     dispatch(
       sendLoginRequest(emailRef.current.value, passwordRef.current.value)
     );
@@ -25,11 +26,7 @@ function Login(props) {
         password: passwordRef.current.value,
       };
       dispatch(registerUser(data));
-      props.loading(true);
-      setTimeout(() => {
-        props.loading(false);
-        setRegister(!register);
-      }, 4000);
+      dispatch(setIsLoading(true));
     }
   };
   return (

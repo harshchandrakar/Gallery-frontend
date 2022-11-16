@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Login from "../Utils/Login";
 import classes from "../Style/Gallery.module.css";
 import { useSelector } from "react-redux";
@@ -6,11 +6,10 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import Dashboard from "./Dashboard";
 function Gallery() {
   const auth = useSelector((data) => data.auth);
-  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className={classes.Gallery}>
-      {isLoading ? (
+      {auth.isLoading ? (
         <Player
           style={{
             height: "300px",
@@ -23,7 +22,7 @@ function Gallery() {
       ) : auth.isLogged ? (
         <Dashboard />
       ) : (
-        <Login loading={setIsLoading} />
+        <Login />
       )}
     </div>
   );

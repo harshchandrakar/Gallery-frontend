@@ -1,5 +1,6 @@
 import {
   LOGIN_SUCCESSFUL,
+  SET_ISLOADING,
   UPDATED_ID,
   UPDATED_POSTS,
   UPDATE_ISSUE,
@@ -36,6 +37,12 @@ export function updateErrors(data) {
     data,
   };
 }
+export function setIsLoading(data) {
+  return {
+    type: SET_ISLOADING,
+    data,
+  };
+}
 //API Calls
 export function sendLoginRequest(email, password) {
   return (dispatch) => {
@@ -56,6 +63,7 @@ export function sendLoginRequest(email, password) {
         if (data.success === true) {
           dispatch(loginMsg(true));
           dispatch(updateId(data.id));
+          data.posts.reverse();
           dispatch(updatePosts(data.posts));
         } else {
           dispatch(
@@ -65,6 +73,7 @@ export function sendLoginRequest(email, password) {
             })
           );
         }
+        dispatch(setIsLoading(false));
       });
   };
 }
@@ -118,6 +127,7 @@ export function registerUser(data) {
             })
           );
         }
+        dispatch(setIsLoading(false));
       });
   };
 }
@@ -142,7 +152,11 @@ export function getAllPost(name) {
               message: data.message,
             })
           );
-        } else dispatch(updatePosts(data.posts));
+        } else {
+          const arr = data.posts;
+          arr.reverse();
+          dispatch(updatePosts(arr));
+        }
       });
   };
 }

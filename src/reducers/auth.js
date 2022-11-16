@@ -1,5 +1,6 @@
 import {
   LOGIN_SUCCESSFUL,
+  SET_ISLOADING,
   UPDATED_ID,
   UPDATED_POSTS,
   UPDATE_ISSUE,
@@ -13,6 +14,7 @@ const initialAuthState = {
     issue: true,
     message: "",
   },
+  isLoading: false,
 };
 
 export default function auth(state = initialAuthState, action) {
@@ -36,6 +38,11 @@ export default function auth(state = initialAuthState, action) {
       return {
         ...state,
         error: action.data,
+      };
+    case SET_ISLOADING:
+      return {
+        ...state,
+        isLoading: action.data,
       };
     default:
       return state;
