@@ -83,9 +83,8 @@ export function createPost(name, file) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.success === true) {
-          console.log(true);
+          dispatch(getAllPost(""));
         } else {
           dispatch(
             updateErrors({
