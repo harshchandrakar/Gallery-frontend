@@ -1,9 +1,9 @@
 import * as React from "react";
 import Modal from "@mui/material/Modal";
 import { Box } from "@mui/material/";
-import { useDispatch, useSelector } from "react-redux";
 import classes from "../Style/Utils.module.css";
 import CloseIcon from "@mui/icons-material/Close";
+import { useSelector } from "react-redux";
 
 const style = {
   position: "absolute",

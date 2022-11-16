@@ -19,7 +19,7 @@ function Login(props) {
     );
   };
   const handleRegister = () => {
-    if (passwordRef.current.value == confirmPasswordRef.current.value) {
+    if (passwordRef.current.value === confirmPasswordRef.current.value) {
       const data = {
         email: emailRef.current.value,
         password: passwordRef.current.value,
@@ -29,7 +29,7 @@ function Login(props) {
       setTimeout(() => {
         props.loading(false);
         setRegister(!register);
-      }, 2000);
+      }, 4000);
     }
   };
   return (

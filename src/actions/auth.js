@@ -1,12 +1,10 @@
 import {
   LOGIN_SUCCESSFUL,
-  OTP_VERIFICATION_FAILED,
   UPDATED_ID,
   UPDATED_POSTS,
   UPDATE_ISSUE,
 } from "./actionTypes";
 import { APIUrls } from "../Components/Helpers/urls";
-import { Navigate, useNavigate } from "react-router-dom";
 
 export function timeProfiler(newtime) {
   return {
