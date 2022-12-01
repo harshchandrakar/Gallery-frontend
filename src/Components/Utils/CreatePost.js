@@ -18,6 +18,7 @@ const style = {
   borderRadius: "40px",
   p: 4,
   height: "200px",
+  minWidth: "250px",
   textAlign: "center",
 };
 function CreatePost(props) {

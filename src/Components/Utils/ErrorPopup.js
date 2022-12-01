@@ -19,6 +19,7 @@ const style = {
   p: 3,
   height: "200px",
   textAlign: "center",
+  minWidth: "250px",
 };
 
 function ErrorPopup(props) {

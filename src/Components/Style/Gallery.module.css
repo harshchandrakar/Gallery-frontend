@@ -84,3 +84,8 @@
     margin: 0;
     font-size: 20px;
 }
+@media (max-width: 650px) {
+    .Post img{
+        max-width:230px
+    }
+}
